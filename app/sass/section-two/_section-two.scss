@@ -1,0 +1,96 @@
+//************************
+// [SECTION-TWO]
+//************************
+
+#two {
+	display: flex;
+	background: linear-gradient(122.77deg, #2F80ED 0%, #17345C 98.9%);;
+}
+
+.inner-two {
+	margin-top: 133px;
+	color: $main-color;
+	@include font($family: 'Open Sans', $size: 44px, $style: null, 
+								$weight: $font-regular );
+	letter-spacing: 0.016em;
+	line-height: 66px;
+	
+	span {
+		font-weight: $font-light;
+	}
+}
+
+.content-text--white {
+	color: $main-color;
+	padding-top: 20px;
+	@include font($family: 'Open Sans', $size: 18px, $style: normal, 
+								$weight: $font-light );
+	letter-spacing: 0.016em;
+	line-height: 27px;
+}
+
+.content-size {
+	max-width: 620px;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.separator {
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	margin: 72px 0px;
+}
+
+.footer {
+
+	margin-bottom: 78px;
+	height: 194px;
+	display: flex;
+	justify-content: space-between;
+	&-logo{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&-nav {
+		width: 380px;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.сopyrigh {
+	@include footer-nav();
+}
+
+.social {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	a {
+		@include footer-nav();
+		text-align: right;
+		&:hover {
+			color: $access-col;
+			font-weight: $font-regular;
+		}
+	}
+}
+
+.navigation {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	a {
+		@include footer-nav();
+		text-align: right;
+		&:hover {
+			color: $access-col;
+			font-weight: $font-regular;
+		}
+	} 
+}

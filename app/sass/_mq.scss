@@ -1,0 +1,247 @@
+
+@media only screen and (min-width: $screen-lg-1600) {
+ .container {
+	 	max-width: 1170px;
+	}
+}
+
+
+
+@media only screen and (max-width: $screen-lg-1024 +300px) {
+
+	.container-outside{
+
+		&:last-child {
+		flex: 0.5;
+		}
+
+		&:first-child {
+		flex: 0.5;
+		}
+	}
+}
+
+
+
+
+
+@media only screen and (max-width: $screen-lg-1024) {
+
+	.flex {
+		flex-wrap: wrap;
+		 text-align: center;
+	}
+
+	.inner-two {
+		margin: auto;
+		padding-top: 50px;
+		
+		 button {
+			margin-bottom: 50px;
+		}
+	}
+
+	.chat-box {
+		width: 350px;
+		margin: auto;
+	}	
+
+}
+
+
+
+
+@media only screen and (min-width: $screen-sm-425) and 
+				(max-width: $screen-md-768) {
+
+	.container {
+		justify-content: center;
+	}
+
+	.inner {
+		top: 150px;
+		@include font($family: 'Open Sans', $size: 32px, $style: null, 
+								$weight: $font-regular );
+	}
+
+	.inner-one {
+		text-align: center;
+		@include font($family: 'Open Sans', $size: 32px, $style: null, 
+								$weight: $font-regular );
+	}
+
+	.button {
+		width: 240px;
+		height: 48px;
+	}
+
+	.wrap-flex {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.content {
+		img {
+			width: 350px;
+		}
+		text-align: center;
+		margin: 0;
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
+
+	.footer {
+		flex-direction: column;
+		&-logo {
+			flex-direction: row;
+		}
+		&-nav {
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
+
+	.social {
+		a {
+		text-align: left;
+		}
+	}
+
+}
+
+
+
+
+@media only screen and (max-width: $screen-sm-425) {
+
+	.content {
+		img {
+			width: 100%;
+		}
+		text-align: center;
+		margin: 0;
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
+
+	.wrap-flex {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.chat-box {
+		width: 88%;
+	}
+
+	.message-box {
+		width: 315px;
+	}
+}
+
+
+
+
+
+@media screen and (min-width: $screen-sm-320) and (max-width: 424px) {
+	
+	.inner {
+		top: 150px;
+		@include font($family: 'Open Sans', $size: 32px, $style: null, 
+								$weight: $font-regular );
+		line-height: 50px;
+		align-content: center;
+		p{
+			text-align: center;
+		}
+	}
+
+	.inner-one, .inner-two {
+		text-align: center;
+		@include font($family: 'Open Sans', $size: 32px, $style: null, 
+								$weight: $font-regular );
+		line-height: 40px;
+	}
+
+	.button {
+		width: 240px;
+		height: 48px;
+		margin-left: 25px;
+		
+	}
+
+	.flex {
+		width: 300px;
+		margin: auto;
+	}
+
+	.chat {
+		width: 275px;
+	}
+	
+	.messages {
+		width: 275px;
+	}
+
+
+	.footer {
+		height: auto;
+		position: relative;
+		flex-direction: column;
+		&-logo {
+			text-align: center;
+			// flex-direction: column;
+		}
+		&-nav {
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
+
+	.social {
+		margin-top: 32px;
+
+		a {
+		text-align: center;
+		}
+	}
+
+	.navigation{
+		margin-top: 32px;
+		a {
+		text-align: center;
+		}
+	}
+	
+	.сopyrigh {
+		position: absolute;
+		bottom: -50px;
+		left: 80px;
+	}
+
+	.content {
+		img {
+			width: 100%;
+		}
+		text-align: center;
+		margin: 0;
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
+
+	.wrap-flex {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.chat-box {
+		width: 88%;
+	}
+
+	.message-box {
+		width: 264px;
+		text-align: center;
+	}
+
+	
+}

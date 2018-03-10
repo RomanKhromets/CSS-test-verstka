@@ -1,0 +1,140 @@
+
+@mixin background( $bg-img-url, $bg-col: rgba(47, 128, 237, 0.5) ){
+  background-image: url($bg-img-url);
+  background-color: $bg-col;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center;
+}
+
+@mixin font( $family: null, $size: null, $style: null, $weight: null) {
+  font-family: $family, sans-serif;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+}
+
+@mixin button() {
+  width: 282px;
+  height: 68px;
+  border-radius: 144px;
+  background-color: $main-color;
+  border: 2px solid $main-color;
+  color: $access-col;  
+  text-align: center;
+	letter-spacing: 0.016em;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-family: Open Sans;
+  transition-duration: 0.8s;
+  cursor: pointer;
+  &:hover {
+    background-color: $access-col;
+    color: $main-color;
+  }
+}
+
+@mixin footer-nav(){
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.7);
+	@include font($family: 'Open Sans', $size: 18px, $style: normal, 
+							$weight: $font-light );
+	line-height: 25px;
+	
+	&:first-child {
+		@include font($family: 'Open Sans', $size: 18px, $style: normal, 
+							$weight: $font-regular );
+		color: $main-color;
+	}
+}
+
+
+/*--------------------
+CHAT
+--------------------*/
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@mixin ball {
+  @include center;
+  content: '';
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+  height: 4px;
+  width:  4px;
+  animation: ball 1.5s linear infinite;
+}
+
+@mixin avatar {
+
+  position: absolute;
+  z-index: 1;
+  bottom: -15px;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@keyframes bounce {
+    0%    {top: 500px}
+    10%   {top: 450px;}
+    20%   {top: 400px;}
+    30%   {top: 350px}
+    40%   {top: 300px}
+    50%   {top: 250px;}
+    60%   {top: 200px;}
+    65%   {top: 175px;}
+    70%   {top: 150px;}
+    75%   {top: 125px;}
+    80%   {top: 100px;}
+    85%   {top: 75px;}
+    90%   {top: 50px;}
+    95%   {top: 25px;}
+    100%  {top: 0px;}
+}
+
+@keyframes ball { 
+  0% {
+    background: rgba(0,0,0,0.5);
+  }
+  50% {
+    background: $main-color;
+  }
+  100% {
+    background: rgba(0,0,0,0.5);
+  }
+}
+
+
+@keyframes loadering { 
+  0% { transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.7% { transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  9.41% { transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  14.11% { transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  18.72% { transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  24.32% { transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  29.93% { transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  35.54% { transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  41.04% { transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  52.15% { transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  63.26% { transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  85.49% { transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+}

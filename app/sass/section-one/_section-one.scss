@@ -1,0 +1,55 @@
+//************************
+// [SECTION-ONE]
+//************************
+
+#one {
+	display: flex;
+	background-color: $main-color;
+}
+
+.inner-one {
+	margin-top: 80px;
+	margin-left: 2px;
+	color: $dark-color;
+	@include font($family: 'Open Sans', $size: 44px, $style: null, 
+								$weight: $font-regular );
+	letter-spacing: 0.016em;
+	line-height: 66px;
+	
+	span {
+		font-weight: $font-light;
+	}
+}
+
+.wrap-flex {
+	display: flex;
+	top: 9px;
+	left: 2px;
+	justify-content: space-between;
+}
+
+.content {
+	display: flex;
+	max-width: 357px;
+	min-width: 225px;
+	margin-top: 41px;
+	margin-bottom: 74px;
+	margin-right: 40px;
+	flex-direction: column;
+	justify-content: flex-start;
+	img {
+		width: 150px;
+		margin-bottom: 20px;
+	}
+}
+
+.content-text {
+	@include font( $family: "Open Sans", $size: 17px , $style: null, $weight: $font-light);
+	letter-spacing: 0.016em;
+	color: $dark-color;
+	span {
+		font-weight: $font-regular;
+		font-size: 24px;
+	}
+}
+

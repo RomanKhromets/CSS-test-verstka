@@ -1,0 +1,268 @@
+
+/*--------------------
+Chat
+--------------------*/
+
+.chat-box {
+  width: 350px;
+  height: 544px;
+  margin-top: 73px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  
+}
+
+.chat {
+  position: relative;
+  width: 350px;
+  height: 80vh;
+  min-height: 400px;
+  max-height: 500px;
+  z-index: 2;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.chat-nav {
+  height: 93px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.icon-shopping_opacity {
+  opacity: 0.5;
+}
+
+.chat-chapter {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  flex-direction: column;
+  text-align: center;
+  text-align: -moz-center;
+  text-align: -webkit-center;
+  cursor: pointer;
+  p {
+    text-align: center;
+    @include font( $family: 'Open Sans', $size: 18, $style: $font-regular, $weight: null);
+    line-height: 25px;
+    color: rgba(255, 255, 255, 0.5);
+    width: 67px;
+    margin-top: 10px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    align-content: center;
+  }
+}
+
+
+#mCSB_1_container {
+  min-height: 400px;
+}
+
+// .mCSB_container{
+  
+// }
+
+.chat-active {
+  background-image: url(../img/chat/bg-but-active.png);
+  width: 60px;
+  height: 60px;
+  p {
+     color: rgba(255, 255, 255, 1);
+  }
+  img {
+    height: 60px;
+  }
+}
+
+.chat-title {
+  flex: 0 1 45px;
+  
+  .avatar {
+    @include avatar;
+    top: 8px;
+    left: 9px;
+    
+  }
+}
+
+.messages {
+  flex: 1 1 auto;
+  color: $dark-color;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  
+  & .messages-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 101%;
+    width: 100%;
+  }
+
+  
+  .message {
+    clear: both;
+    float: left;
+    display: flex;
+    max-width: 260px;
+    min-width: 40px;
+    border-radius: 10px 10px 10px 3px;
+    background-color: $main-color;
+    margin: 8px 0;
+
+    @include font($family: 'Open Sans', $size: 14px, $style: $font-light);
+    line-height: 19px;
+    margin-left: 35px;
+    position: relative;
+
+    .timestamp {
+      display: none;
+      position: absolute;
+      bottom: -15px;
+      font-size: 9px;
+      color: rgba(255, 255, 255, .3);
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      border-right: 7px solid transparent;
+    }
+    
+    .avatar {
+      @include avatar;
+      left: -35px;
+    }
+
+    .avatar-personal {
+      @include avatar;
+      right: -35px;
+    }
+    
+    &.message-personal {
+      float: right;
+      min-width: 40px;
+      right: 39px;
+      padding: 10px;
+      color: $main-color;
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.25);
+      border-radius: 15px;
+      
+      &::before {
+        left: auto;
+        right: 0;
+        border-right: none;
+        bottom: -4px;
+      }
+    }
+    
+    &:last-child {
+      margin-bottom: 30px;
+      // margin-top: 30px;
+    }
+    
+    &.new {
+      margin-top: 20px;
+      padding: 8px;
+      animation-name: bounce;
+      animation-duration: 800ms;
+      text-align: left;
+    }
+    
+    &.loading {
+      transform: scale(0);
+      animation: loadering 600ms linear both;
+      z-index: 100;
+      }
+
+      & span {
+
+        @include ball;
+        animation-delay: .3s;
+
+        &::before {
+          @include ball;
+          animation-delay: .6s;
+          margin-left: -10px;
+        }
+
+        &::after {
+          @include ball;
+          margin-left: 10px;
+          animation-delay: .1s;
+        }
+
+      }
+    }
+     
+}
+
+.message-box {
+  flex: 0 1 40px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  position: relative;
+  border-radius: 20px;
+
+  
+  & .message-input {
+    background: none;
+    border: 15px;
+    outline: none!important;
+    resize: none;
+    color: rgba(255, 255, 255, .7);
+   
+    @include font($family: 'Open Sans', $size: 14px, $style: $font-light);
+    line-height: 19px;
+    height: 20px;
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 265px;
+
+  }
+
+  textarea {
+    &:focus {
+      color: $main-color;
+    }
+  }
+  
+  
+  & .message-submit {
+    position: absolute;
+    z-index: 1;
+    top: 9px;
+    right: 10px;
+    color: $main-color;
+    border: none;
+    border-radius: 10px;
+    background: $access-col;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 1;
+    transition-duration: 0.8s;
+    cursor: pointer;
+    padding: 6px 10px; 
+    outline: none!important;
+    
+    &:hover {
+      background: $main-color;
+      color: $dark-color;
+    }
+  }
+}
+

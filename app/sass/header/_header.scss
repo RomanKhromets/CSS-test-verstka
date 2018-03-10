@@ -1,0 +1,60 @@
+//************************
+// [HEADER]
+//************************
+
+.header {
+	display: flex;
+	height: 628px;
+	@include background("/img/header-img.png");
+}
+
+.container{
+	flex: 7.3; 
+}
+
+.container-outside {
+	flex: 1.35;
+}
+
+.header-top{
+	position: relative;
+	top: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo {
+	a {
+		text-decoration: none;
+		@include font($family: 'Montserrat', $size: 21px, $weight: normal);
+		color: $main-color;
+	}
+}	
+
+.icons {
+	a{
+		text-decoration: none;
+		&:first-child {
+			padding-right: 20px;
+		}
+	}
+}
+
+.inner {
+	position: absolute;
+	top: 200px;
+	color: $main-color;
+	@include font($family: 'Open Sans', $size: 44px, $style: null, 
+								$weight: $font-regular );
+	letter-spacing: 0.016em;
+	line-height: 66px;
+	
+	span {
+		font-weight: $font-light;
+	}
+}
+
+.button {
+	margin-top: 50px;
+	@include button();
+}
